@@ -3,7 +3,6 @@ C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Pe
 C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\bin\Debug\net10.0-windows\Peg Solitaire Game.runtimeconfig.json
 C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\bin\Debug\net10.0-windows\Peg Solitaire Game.dll
 C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\bin\Debug\net10.0-windows\Peg Solitaire Game.pdb
-C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\obj\Debug\net10.0-windows\Peg_Solitaire_Game.Form1.resources
 C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\obj\Debug\net10.0-windows\Peg Solitaire Game.csproj.GenerateResource.cache
 C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\obj\Debug\net10.0-windows\Peg Solitaire Game.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\obj\Debug\net10.0-windows\Peg Solitaire Game.AssemblyInfoInputs.cache
@@ -14,3 +13,6 @@ C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Pe
 C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\obj\Debug\net10.0-windows\Peg Solitaire Game.pdb
 C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\obj\Debug\net10.0-windows\Peg Solitaire Game.genruntimeconfig.cache
 C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\obj\Debug\net10.0-windows\ref\Peg Solitaire Game.dll
+C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\obj\Debug\net10.0-windows\Peg Solitaire Game.sourcelink.json
+C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\obj\Debug\net10.0-windows\Peg_Solitaire_Game.StartNewGameForm.resources
+C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\Peg Solitaire Game\obj\Debug\net10.0-windows\Peg_Solitaire_Game.GameForm.resources

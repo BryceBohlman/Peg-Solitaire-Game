@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Peg Solitaire Game/Peg Solitaire Game.csproj" />
+  <Project Path="PegSolitaire.Tests/PegSolitaire.Tests.csproj" Id="19d5c638-49b6-4b0c-a849-f884c92bbe4f" />
 </Solution>
