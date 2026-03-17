@@ -1,0 +1,8 @@
+C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\PegSolitaire.Tests\bin\Debug\net10.0-windows\.msCoverageSourceRootsMapping_PegSolitaire.Tests
+C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\PegSolitaire.Tests\bin\Debug\net10.0-windows\CoverletSourceRootsMapping_PegSolitaire.Tests
+C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\PegSolitaire.Tests\obj\Debug\net10.0-windows\PegSolitaire.Tests.csproj.AssemblyReference.cache
+C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\PegSolitaire.Tests\obj\Debug\net10.0-windows\PegSolitaire.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\PegSolitaire.Tests\obj\Debug\net10.0-windows\PegSolitaire.Tests.AssemblyInfoInputs.cache
+C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\PegSolitaire.Tests\obj\Debug\net10.0-windows\PegSolitaire.Tests.AssemblyInfo.cs
+C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\PegSolitaire.Tests\obj\Debug\net10.0-windows\PegSolitaire.Tests.csproj.CoreCompileInputs.cache
+C:\Users\bbb98\Documents\UMKC\2026 Spring\CS 449 Intro to Sofware Engineering\Peg Solitaire Game\PegSolitaire.Tests\obj\Debug\net10.0-windows\PegSolitaire.Tests.sourcelink.json

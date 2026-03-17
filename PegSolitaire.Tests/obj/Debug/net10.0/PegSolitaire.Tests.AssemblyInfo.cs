@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PegSolitaire.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bfb032fa0e4882b4f400b8d799617d86ae8e07e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63b384b4f968566a8ae5387ed5a03ef1c7197bf8")]
 [assembly: System.Reflection.AssemblyProductAttribute("PegSolitaire.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PegSolitaire.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

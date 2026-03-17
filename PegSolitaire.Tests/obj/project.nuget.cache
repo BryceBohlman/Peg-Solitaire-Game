@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "P1A5OC/IQEU=",
-  "success": false,
+  "dgSpecHash": "BvysWFudGO4=",
+  "success": true,
   "projectFilePath": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\PegSolitaire.Tests\\PegSolitaire.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bbb98\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
@@ -20,17 +20,5 @@
     "C:\\Users\\bbb98\\.nuget\\packages\\nunit.analyzers\\4.7.0\\nunit.analyzers.4.7.0.nupkg.sha512",
     "C:\\Users\\bbb98\\.nuget\\packages\\nunit3testadapter\\5.0.0\\nunit3testadapter.5.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project Peg Solitaire Game is not compatible with net10.0 (.NETCoreApp,Version=v10.0). Project Peg Solitaire Game supports: net10.0-windows7.0 (.NETCoreApp,Version=v10.0)",
-      "projectPath": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\PegSolitaire.Tests\\PegSolitaire.Tests.csproj",
-      "filePath": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\PegSolitaire.Tests\\PegSolitaire.Tests.csproj",
-      "libraryId": "Peg Solitaire Game",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }

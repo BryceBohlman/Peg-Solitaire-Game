@@ -3,23 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|c:\\users\\bbb98\\documents\\umkc\\2026 spring\\cs 449 intro to sofware engineering\\peg solitaire game\\peg solitaire game\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|solutionrelative:peg solitaire game\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|c:\\users\\bbb98\\documents\\umkc\\2026 spring\\cs 449 intro to sofware engineering\\peg solitaire game\\peg solitaire game\\peg solitaire game.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|solutionrelative:peg solitaire game\\peg solitaire game.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19D5C638-49B6-4B0C-A849-F884C92BBE4F}|PegSolitaire.Tests\\PegSolitaire.Tests.csproj|c:\\users\\bbb98\\documents\\umkc\\2026 spring\\cs 449 intro to sofware engineering\\peg solitaire game\\pegsolitaire.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19D5C638-49B6-4B0C-A849-F884C92BBE4F}|PegSolitaire.Tests\\PegSolitaire.Tests.csproj|solutionrelative:pegsolitaire.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{19D5C638-49B6-4B0C-A849-F884C92BBE4F}|PegSolitaire.Tests\\PegSolitaire.Tests.csproj|c:\\users\\bbb98\\documents\\umkc\\2026 spring\\cs 449 intro to sofware engineering\\peg solitaire game\\pegsolitaire.tests\\pegsolitaire.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{19D5C638-49B6-4B0C-A849-F884C92BBE4F}|PegSolitaire.Tests\\PegSolitaire.Tests.csproj|solutionrelative:pegsolitaire.tests\\pegsolitaire.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|c:\\users\\bbb98\\documents\\umkc\\2026 spring\\cs 449 intro to sofware engineering\\peg solitaire game\\peg solitaire game\\pegboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|solutionrelative:peg solitaire game\\pegboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|c:\\users\\bbb98\\documents\\umkc\\2026 spring\\cs 449 intro to sofware engineering\\peg solitaire game\\peg solitaire game\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|solutionrelative:peg solitaire game\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|c:\\users\\bbb98\\documents\\umkc\\2026 spring\\cs 449 intro to sofware engineering\\peg solitaire game\\peg solitaire game\\startnewgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|solutionrelative:peg solitaire game\\startnewgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|c:\\users\\bbb98\\documents\\umkc\\2026 spring\\cs 449 intro to sofware engineering\\peg solitaire game\\peg solitaire game\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\peg solitaire game\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|solutionrelative:peg solitaire game\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -31,7 +42,7 @@
       "RelativeMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|solutionrelative:peg solitaire game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|c:\\users\\bbb98\\documents\\umkc\\2026 spring\\cs 449 intro to sofware engineering\\peg solitaire game\\peg solitaire game\\startnewgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\peg solitaire game\\startnewgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7F275733-AF73-25E4-946C-EC7EAD95B032}|Peg Solitaire Game\\Peg Solitaire Game.csproj|solutionrelative:peg solitaire game\\startnewgameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -46,8 +57,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Peg Solitaire Game",
+              "DocumentMoniker": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\Peg Solitaire Game.csproj",
+              "RelativeDocumentMoniker": "Peg Solitaire Game\\Peg Solitaire Game.csproj",
+              "ToolTip": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\Peg Solitaire Game.csproj",
+              "RelativeToolTip": "Peg Solitaire Game\\Peg Solitaire Game.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-17T02:40:14.446Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -56,40 +80,27 @@
               "RelativeDocumentMoniker": "PegSolitaire.Tests\\UnitTest1.cs",
               "ToolTip": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\PegSolitaire.Tests\\UnitTest1.cs",
               "RelativeToolTip": "PegSolitaire.Tests\\UnitTest1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-17T02:05:23.189Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GameForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\GameForm.Designer.cs",
-              "RelativeDocumentMoniker": "Peg Solitaire Game\\GameForm.Designer.cs",
-              "ToolTip": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\GameForm.Designer.cs",
-              "RelativeToolTip": "Peg Solitaire Game\\GameForm.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T23:15:09.545Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "GameForm.cs",
               "DocumentMoniker": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\GameForm.cs",
               "RelativeDocumentMoniker": "Peg Solitaire Game\\GameForm.cs",
               "ToolTip": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\GameForm.cs",
               "RelativeToolTip": "Peg Solitaire Game\\GameForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-16T23:08:36.348Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PegBoard.cs",
               "DocumentMoniker": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\PegBoard.cs",
               "RelativeDocumentMoniker": "Peg Solitaire Game\\PegBoard.cs",
@@ -102,7 +113,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "PegSolitaire.Tests",
+              "DocumentMoniker": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\PegSolitaire.Tests\\PegSolitaire.Tests.csproj",
+              "RelativeDocumentMoniker": "PegSolitaire.Tests\\PegSolitaire.Tests.csproj",
+              "ToolTip": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\PegSolitaire.Tests\\PegSolitaire.Tests.csproj",
+              "RelativeToolTip": "PegSolitaire.Tests\\PegSolitaire.Tests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-17T02:29:26.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAFoHAAAAAAAAAAAQwG4HAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-03-17T02:32:10.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GameForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\GameForm.Designer.cs",
+              "RelativeDocumentMoniker": "Peg Solitaire Game\\GameForm.Designer.cs",
+              "ToolTip": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\GameForm.Designer.cs",
+              "RelativeToolTip": "Peg Solitaire Game\\GameForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T23:15:09.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "StartNewGameForm.cs",
               "DocumentMoniker": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\StartNewGameForm.cs",
               "RelativeDocumentMoniker": "Peg Solitaire Game\\StartNewGameForm.cs",
@@ -115,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "GameForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\GameForm.cs",
               "RelativeDocumentMoniker": "Peg Solitaire Game\\GameForm.cs",
@@ -127,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\Program.cs",
               "RelativeDocumentMoniker": "Peg Solitaire Game\\Program.cs",
@@ -140,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "MoveLogic.cs",
               "DocumentMoniker": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\MoveLogic.cs",
               "RelativeDocumentMoniker": "Peg Solitaire Game\\MoveLogic.cs",
@@ -153,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "StartNewGameForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\StartNewGameForm.cs",
               "RelativeDocumentMoniker": "Peg Solitaire Game\\StartNewGameForm.cs",

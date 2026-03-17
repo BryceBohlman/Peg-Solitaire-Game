@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {
+    "net10.0-windows7.0": {
       "coverlet.collector/6.0.4": {
         "type": "package",
         "build": {
@@ -618,13 +618,16 @@
       },
       "Peg Solitaire Game/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
           "bin/placeholder/Peg Solitaire Game.dll": {}
         },
         "runtime": {
           "bin/placeholder/Peg Solitaire Game.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       }
     }
   },
@@ -1522,7 +1525,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net10.0": [
+    "net10.0-windows7.0": [
       "Microsoft.NET.Test.Sdk >= 17.14.0",
       "NUnit >= 4.3.2",
       "NUnit.Analyzers >= 4.7.0",
@@ -1553,7 +1556,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net10.0"
+        "net10.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -1561,8 +1564,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net10.0": {
-          "targetAlias": "net10.0",
+        "net10.0-windows7.0": {
+          "targetAlias": "net10.0-windows",
           "projectReferences": {
             "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\Peg Solitaire Game.csproj": {
               "projectPath": "C:\\Users\\bbb98\\Documents\\UMKC\\2026 Spring\\CS 449 Intro to Sofware Engineering\\Peg Solitaire Game\\Peg Solitaire Game\\Peg Solitaire Game.csproj"
@@ -1580,11 +1583,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
-      "net10.0": {
-        "targetAlias": "net10.0",
+      "net10.0-windows7.0": {
+        "targetAlias": "net10.0-windows",
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
@@ -1623,7 +1626,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.104/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1900,16 +1903,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project Peg Solitaire Game is not compatible with net10.0 (.NETCoreApp,Version=v10.0). Project Peg Solitaire Game supports: net10.0-windows7.0 (.NETCoreApp,Version=v10.0)",
-      "libraryId": "Peg Solitaire Game",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  }
 }
