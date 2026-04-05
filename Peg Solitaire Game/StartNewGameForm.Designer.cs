@@ -30,18 +30,20 @@
         {
             LineLabel1 = new Label();
             ExampleTextLabel = new Label();
-            BoardSizeInput = new NumericUpDown();
+            BoardSizeNumericUpDown = new NumericUpDown();
             SizePromptText = new TextBox();
-            comboBox1 = new ComboBox();
+            BoardTypeInputComboBox = new ComboBox();
             label1 = new Label();
             StartGameButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)BoardSizeInput).BeginInit();
+            ManualAutoComboBox = new ComboBox();
+            ManualAutoSelectionLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)BoardSizeNumericUpDown).BeginInit();
             SuspendLayout();
             // 
             // LineLabel1
             // 
             LineLabel1.BorderStyle = BorderStyle.FixedSingle;
-            LineLabel1.Location = new Point(195, 173);
+            LineLabel1.Location = new Point(195, 234);
             LineLabel1.Name = "LineLabel1";
             LineLabel1.Size = new Size(400, 2);
             LineLabel1.TabIndex = 1;
@@ -50,20 +52,20 @@
             // ExampleTextLabel
             // 
             ExampleTextLabel.AutoSize = true;
-            ExampleTextLabel.Location = new Point(287, 246);
+            ExampleTextLabel.Location = new Point(291, 349);
             ExampleTextLabel.Name = "ExampleTextLabel";
             ExampleTextLabel.Size = new Size(165, 25);
             ExampleTextLabel.TabIndex = 5;
             ExampleTextLabel.Text = "This is example text";
             // 
-            // BoardSizeInput
+            // BoardSizeNumericUpDown
             // 
-            BoardSizeInput.Location = new Point(386, 49);
-            BoardSizeInput.Name = "BoardSizeInput";
-            BoardSizeInput.Size = new Size(180, 31);
-            BoardSizeInput.TabIndex = 6;
-            BoardSizeInput.Value = new decimal(new int[] { 7, 0, 0, 0 });
-            BoardSizeInput.ValueChanged += BoardSizeSelect_ValueChanged;
+            BoardSizeNumericUpDown.Location = new Point(386, 49);
+            BoardSizeNumericUpDown.Name = "BoardSizeNumericUpDown";
+            BoardSizeNumericUpDown.Size = new Size(180, 31);
+            BoardSizeNumericUpDown.TabIndex = 6;
+            BoardSizeNumericUpDown.Value = new decimal(new int[] { 7, 0, 0, 0 });
+            BoardSizeNumericUpDown.ValueChanged += BoardSizeSelect_ValueChanged;
             // 
             // SizePromptText
             // 
@@ -74,15 +76,15 @@
             SizePromptText.TabIndex = 7;
             SizePromptText.Text = "Choose Board Size";
             // 
-            // comboBox1
+            // BoardTypeInputComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "English", "French", "Triangular" });
-            comboBox1.Location = new Point(386, 107);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(182, 33);
-            comboBox1.TabIndex = 8;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            BoardTypeInputComboBox.FormattingEnabled = true;
+            BoardTypeInputComboBox.Items.AddRange(new object[] { "English", "Hexagonal" });
+            BoardTypeInputComboBox.Location = new Point(386, 107);
+            BoardTypeInputComboBox.Name = "BoardTypeInputComboBox";
+            BoardTypeInputComboBox.Size = new Size(182, 33);
+            BoardTypeInputComboBox.TabIndex = 8;
+            BoardTypeInputComboBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -95,7 +97,7 @@
             // 
             // StartGameButton
             // 
-            StartGameButton.Location = new Point(314, 209);
+            StartGameButton.Location = new Point(319, 312);
             StartGameButton.Name = "StartGameButton";
             StartGameButton.Size = new Size(112, 34);
             StartGameButton.TabIndex = 10;
@@ -103,21 +105,41 @@
             StartGameButton.UseVisualStyleBackColor = true;
             StartGameButton.Click += StartGameButton_Click;
             // 
+            // ManualAutoComboBox
+            // 
+            ManualAutoComboBox.FormattingEnabled = true;
+            ManualAutoComboBox.Items.AddRange(new object[] { "Manual", "Automatic" });
+            ManualAutoComboBox.Location = new Point(386, 170);
+            ManualAutoComboBox.Name = "ManualAutoComboBox";
+            ManualAutoComboBox.Size = new Size(182, 33);
+            ManualAutoComboBox.TabIndex = 11;
+            // 
+            // ManualAutoSelectionLabel
+            // 
+            ManualAutoSelectionLabel.AutoSize = true;
+            ManualAutoSelectionLabel.Location = new Point(195, 173);
+            ManualAutoSelectionLabel.Name = "ManualAutoSelectionLabel";
+            ManualAutoSelectionLabel.Size = new Size(136, 25);
+            ManualAutoSelectionLabel.TabIndex = 12;
+            ManualAutoSelectionLabel.Text = "Manual or Auto";
+            // 
             // StartNewGameForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ManualAutoSelectionLabel);
+            Controls.Add(ManualAutoComboBox);
             Controls.Add(StartGameButton);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(BoardTypeInputComboBox);
             Controls.Add(SizePromptText);
-            Controls.Add(BoardSizeInput);
+            Controls.Add(BoardSizeNumericUpDown);
             Controls.Add(ExampleTextLabel);
             Controls.Add(LineLabel1);
             Name = "StartNewGameForm";
             Text = "Start New Game";
-            ((System.ComponentModel.ISupportInitialize)BoardSizeInput).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BoardSizeNumericUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,8 +149,11 @@
         private Label ExampleTextLabel;
         private NumericUpDown BoardSizeInput;
         private TextBox SizePromptText;
-        private ComboBox comboBox1;
+        private ComboBox BoardTypeInputComboBox;
         private Label label1;
         private Button StartGameButton;
+        private NumericUpDown BoardSizeNumericUpDown;
+        private ComboBox ManualAutoComboBox;
+        private Label ManualAutoSelectionLabel;
     }
 }

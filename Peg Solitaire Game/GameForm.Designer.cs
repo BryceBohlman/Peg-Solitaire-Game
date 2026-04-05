@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             boardPanel = new Panel();
+            solveButton = new Button();
             SuspendLayout();
             // 
             // boardPanel
@@ -39,11 +40,22 @@
             boardPanel.Size = new Size(776, 426);
             boardPanel.TabIndex = 0;
             // 
+            // solveButton
+            // 
+            solveButton.Location = new Point(811, 12);
+            solveButton.Name = "solveButton";
+            solveButton.Size = new Size(112, 34);
+            solveButton.TabIndex = 1;
+            solveButton.Text = "Auto Solve";
+            solveButton.UseVisualStyleBackColor = true;
+            solveButton.Click += solveButton_Click;
+            // 
             // GameForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1001, 637);
+            Controls.Add(solveButton);
             Controls.Add(boardPanel);
             Name = "GameForm";
             Text = "GameForm";
@@ -53,5 +65,6 @@
         #endregion
 
         private Panel boardPanel;
+        private Button solveButton;
     }
 }

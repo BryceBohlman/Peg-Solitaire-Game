@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Net.Sockets;
 using System.Security.Policy;
 using System.Text;
 using System.Windows.Forms;
@@ -13,25 +14,33 @@ namespace Peg_Solitaire_Game
     {
         //private PegBoard board;
         private Button[,] buttons;
-        private PegBoard board;
+        private GameBase game;
         private int boardSize;
         private string boardType;
         private Point? selectedPeg = null;
+
 
 
         public GameForm()
         {
             InitializeComponent();
         }
-        public GameForm(int size, string type)
+        public GameForm(int size, string type, string selectedMode)
         {
+
+            boardSize = size;//Do not delete these, the GenerateBoard function references the value in boardSize. If this constructor never sets the value,
+            boardType = type;//GenerateBoard does not work properly. I can't remember if boardType ever gets referenced tbh but I'm leaving it just in case
             InitializeComponent();
 
-            boardSize = size;
-            boardType = type;
-
-            board = new PegBoard(boardSize);
-            board.Initialize(boardType);
+            if (selectedMode == "Manual")
+            {
+                game = new ManualGame(size, type);
+            }
+            else
+            {
+                game = new AutomatedGame(size, type);
+            }
+            //game = new ManualGame(boardSize, boardType); // or AutomatedGame
 
             GenerateBoard();
             UpdateBoard();
@@ -71,7 +80,7 @@ namespace Peg_Solitaire_Game
             {
                 for (int c = 0; c < boardSize; c++)
                 {
-                    switch (board.Board[r, c])
+                    switch (game.Board.Board[r, c])
                     {
                         case SlotState.Peg:
                             buttons[r, c].Text = "●";
@@ -100,7 +109,7 @@ namespace Peg_Solitaire_Game
             }
         }
 
-        private void Slot_Click(object sender, EventArgs e)
+        /*private void Slot_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
 
@@ -110,6 +119,22 @@ namespace Peg_Solitaire_Game
             int col = pos.Y;
 
             HandleMove(row, col);
+        }*/
+        private void Slot_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            Point pos = (Point)btn.Tag;
+
+            if (game is ManualGame manualGame)
+            {
+                bool moved = manualGame.HandleClick(pos);
+
+                if (moved)
+                {
+                    UpdateBoard();
+                    CheckGameOver();
+                }
+            }
         }
 
         private void HandleMove(int row, int col)
@@ -117,7 +142,7 @@ namespace Peg_Solitaire_Game
             // First click: select a peg
             if (selectedPeg == null)
             {
-                if (board.Board[row, col] == SlotState.Peg)
+                if (game.Board.Board[row, col] == SlotState.Peg)
                 {
                     selectedPeg = new Point(row, col);
                 }
@@ -128,9 +153,9 @@ namespace Peg_Solitaire_Game
             Point from = selectedPeg.Value;
             Point to = new Point(row, col);
 
-            if (board.IsValidMove(from, to))
+            if (game.Board.IsValidMove(from, to))
             {
-                board.MakeMove(from, to);
+                game.Board.MakeMove(from, to);
                 UpdateBoard();
                 CheckGameOver();
             }
@@ -140,13 +165,13 @@ namespace Peg_Solitaire_Game
 
         private void CheckGameOver()
         {
-            int pegs = board.CountPegs();
+            int pegs = game.Board.CountPegs();
 
             if (pegs == 1)
             {
                 ShowEndDialog("You win! Only one peg remains.");
             }
-            else if (!board.HasAnyValidMoves())
+            else if (!game.Board.HasAnyValidMoves())
             {
                 ShowEndDialog($"No more moves! Pegs remaining: {pegs}");
             }
@@ -177,5 +202,45 @@ namespace Peg_Solitaire_Game
             newGame.Show();
             this.Close();
         }
+
+        private async void solveButton_Click(object sender, EventArgs e)
+        {
+            if (game is AutomatedGame autoGame)
+            {
+                autoGame.ComputeSolution();
+
+                while (!game.IsGameOver())
+                {
+                    bool moved = autoGame.PlayStep();
+
+                    if (!moved)
+                        break;
+
+                    UpdateBoard();
+                    await Task.Delay(200);
+                }
+
+                CheckGameOver();
+            }
+        }
+
+        /*private async void solveButton_Click(object sender, EventArgs e)
+        {
+            if (game is AutomatedGame autoGame)
+            {
+                while (!game.IsGameOver())
+                {
+                    bool moved = autoGame.PlayStep();
+
+                    if (!moved)
+                        break;
+
+                    UpdateBoard();
+                    await Task.Delay(200);
+                }
+
+                CheckGameOver();
+            }
+        }*/
     }
 }

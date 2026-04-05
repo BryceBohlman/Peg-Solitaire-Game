@@ -24,10 +24,11 @@ namespace Peg_Solitaire_Game
 
         private void StartGameButton_Click(object sender, EventArgs e)
         {
-            int boardSize = (int)BoardSizeInput.Value;
-            string boardType = comboBox1.SelectedItem.ToString();
+            int sizeInput = (int)BoardSizeNumericUpDown.Value;
+            string typeInput = BoardTypeInputComboBox.SelectedItem.ToString();
+            string manualAutoInput = ManualAutoComboBox.SelectedItem.ToString();
 
-            GameForm game = new GameForm(boardSize, boardType);
+            GameForm game = new GameForm(sizeInput, typeInput, manualAutoInput);
             game.Show();
 
             this.Hide();

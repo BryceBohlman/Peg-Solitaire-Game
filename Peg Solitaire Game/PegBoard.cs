@@ -20,53 +20,15 @@ namespace Peg_Solitaire_Game
             Board = new SlotState[size, size];
         }
 
-        public bool IsValidMove(Point from, Point to)
-        {
-            // Must start on a peg
-            if (Board[from.X, from.Y] != SlotState.Peg)
-                return false;
-
-            // Destination must be empty
-            if (Board[to.X, to.Y] != SlotState.Empty)
-                return false;
-
-            int dr = to.X - from.X;
-            int dc = to.Y - from.Y;
-
-            // Must move exactly 2 spaces in one direction
-            if (!((Math.Abs(dr) == 2 && dc == 0) ||
-                  (Math.Abs(dc) == 2 && dr == 0)))
-                return false;
-
-            // Find jumped peg
-            int midR = (from.X + to.X) / 2;
-            int midC = (from.Y + to.Y) / 2;
-
-            // Middle must contain a peg
-            if (Board[midR, midC] != SlotState.Peg)
-                return false;
-
-            return true;
-        }
-
-        public void MakeMove(Point from, Point to)
-        {
-            int midR = (from.X + to.X) / 2;
-            int midC = (from.Y + to.Y) / 2;
-
-            // Move peg
-            Board[to.X, to.Y] = SlotState.Peg;
-
-            // Clear old positions
-            Board[from.X, from.Y] = SlotState.Empty;
-            Board[midR, midC] = SlotState.Empty;
-        }
-
         public void Initialize(string boardType)
         {
             if (boardType == "English")
             {
                 InitializeEnglish();
+            }
+            else if (boardType == "Hexagonal")
+            {
+                InitializeHex();
             }
         }
 
@@ -91,6 +53,101 @@ namespace Peg_Solitaire_Game
 
             // Center starts empty
             Board[3, 3] = SlotState.Empty;
+        }
+
+        private void InitializeHex()
+        {
+            int size = Board.GetLength(0);
+            int center = size / 2;
+
+            for (int r = 0; r < size; r++)
+            {
+                for (int c = 0; c < size; c++)
+                {
+                    int distance = Math.Abs(r - center);
+
+                    int minCol = distance;
+                    int maxCol = size - 1 - distance;
+
+                    if (c >= minCol && c <= maxCol)
+                    {
+                        Board[r, c] = SlotState.Peg;
+                    }
+                    else
+                    {
+                        Board[r, c] = SlotState.Invalid;
+                    }
+                }
+            }
+
+            // Empty center
+            Board[center, center] = SlotState.Empty;
+        }
+
+        public bool IsValidMove(Point from, Point to)
+        {
+            int size = Board.GetLength(0);
+
+            // Bounds check
+            if (from.X < 0 || from.X >= size ||
+                from.Y < 0 || from.Y >= size ||
+                to.X < 0 || to.X >= size ||
+                to.Y < 0 || to.Y >= size)
+            {
+                return false;
+            }
+
+            // Must start on a peg
+            if (Board[from.X, from.Y] != SlotState.Peg)
+                return false;
+
+            // Destination must be empty
+            if (Board[to.X, to.Y] != SlotState.Empty)
+                return false;
+
+            int dx = to.X - from.X;
+            int dy = to.Y - from.Y;
+
+            bool validDirection =
+                (Math.Abs(dx) == 2 && dy == 0) ||
+                (Math.Abs(dy) == 2 && dx == 0) ||
+                (dx == -2 && dy == 2) ||
+                (dx == 2 && dy == -2);
+
+            if (!validDirection)
+                return false;
+
+            Point mid = new Point((from.X + to.X) / 2, (from.Y + to.Y) / 2);
+
+            /*// Find jumped peg
+            int midR = (from.X + to.X) / 2;
+            int midC = (from.Y + to.Y) / 2;
+            */
+
+            // Middle must contain a peg
+            if (Board[mid.X, mid.Y] != SlotState.Peg)
+                return false;
+
+            return true;
+        }
+
+        public void MakeMove(Point from, Point to)
+        {
+            Point mid = new Point((from.X + to.X) / 2, (from.Y + to.Y) / 2);
+
+            Board[from.X, from.Y] = SlotState.Empty;
+            Board[mid.X, mid.Y] = SlotState.Empty;  // remove jumped peg
+            Board[to.X, to.Y] = SlotState.Peg;
+
+            /*int midR = (from.X + to.X) / 2;
+            int midC = (from.Y + to.Y) / 2;
+
+            // Move peg
+            Board[to.X, to.Y] = SlotState.Peg;
+
+            // Clear old positions
+            Board[from.X, from.Y] = SlotState.Empty;
+            Board[midR, midC] = SlotState.Empty;*/
         }
 
         public int CountPegs()
@@ -125,10 +182,12 @@ namespace Peg_Solitaire_Game
                     // Try all 4 directions
                     Point[] directions =
                     {
-                        new Point(r - 2, c),
-                        new Point(r + 2, c),
-                        new Point(r, c - 2),
-                        new Point(r, c + 2)
+                        new Point(r - 2, c), //up
+                        new Point(r + 2, c), //down
+                        new Point(r, c - 2), //left
+                        new Point(r, c + 2), //right
+                        new Point(r - 2, r + 2), //up-right
+                        new Point(r + 2, c - 2) //down-left
             };
 
                     foreach (var to in directions)
@@ -149,6 +208,58 @@ namespace Peg_Solitaire_Game
             return p.X >= 0 && p.X < size &&
                    p.Y >= 0 && p.Y < size;
         }
-    }
 
+        public PegBoard Clone()
+        {
+            int size = Board.GetLength(0);
+            PegBoard copy = new PegBoard(size);
+
+            for (int r = 0; r < size; r++)
+            {
+                for (int c = 0; c < size; c++)
+                {
+                    copy.Board[r, c] = this.Board[r, c];
+                }
+            }
+
+            return copy;
+        }
+
+        public List<(Point from, Point to)> GetAllValidMoves()
+        {
+            var moves = new List<(Point, Point)>();
+            int size = Board.GetLength(0);
+
+            for (int r = 0; r < size; r++)
+            {
+                for (int c = 0; c < size; c++)
+                {
+                    if (Board[r, c] != SlotState.Peg)
+                        continue;
+
+                    Point from = new Point(r, c);
+
+                    Point[] directions =
+                    {
+                        new Point(r - 2, c), //up
+                        new Point(r + 2, c), //down
+                        new Point(r, c - 2), //left
+                        new Point(r, c + 2), //right
+                        new Point(r - 2, r + 2), //up-right
+                        new Point(r + 2, c - 2) //down-left
+            };
+
+                    foreach (var to in directions)
+                    {
+                        if (IsWithinBounds(to) && IsValidMove(from, to))
+                        {
+                            moves.Add((from, to));
+                        }
+                    }
+                }
+            }
+
+            return moves;
+        }
+    }
 }
