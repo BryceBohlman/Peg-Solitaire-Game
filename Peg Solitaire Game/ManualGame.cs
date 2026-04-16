@@ -13,6 +13,10 @@ namespace Peg_Solitaire_Game
 
         public ManualGame(int size, string type) : base(size, type) { }
 
+        public ManualGame(PegBoard existingBoard) : base(existingBoard) { }
+
+        public ManualGame(PegBoard board, List<GameMove> history) : base(board, history) { }
+
         public bool HandleClick(Point pos)
         {
             // First click: select peg

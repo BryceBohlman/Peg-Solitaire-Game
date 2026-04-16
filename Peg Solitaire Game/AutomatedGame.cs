@@ -9,21 +9,38 @@ namespace Peg_Solitaire_Game
     //!!!TODO: Autosolver takes exponential time, implement memoization
     public class AutomatedGame : GameBase
     {
-        private List<(Point from, Point to)> solution;
+        //private List<(Point from, Point to)> solution;
+        private List<GameMove>? solution;
         private int currentStep = 0;
+        private List<GameMove>? replayMoves;
+        private int replayStep = 0;
 
         public AutomatedGame(int size, string type) : base(size, type) { }
 
+        public AutomatedGame(PegBoard existingBoard) : base(existingBoard) { }
+
+        public AutomatedGame(PegBoard board, List<GameMove> history) : base(board, history) { }
+
         public bool PlayStep()
         {
-            if (solution == null || currentStep >= solution.Count)
+            /*if (solution == null || currentStep >= solution.Count)
                 return false;
 
             var move = solution[currentStep];
             board.MakeMove(move.from, move.to);
 
             currentStep++;
-            return true;
+            return true;*/
+            if (solution == null || currentStep >= solution.Count)
+                return false;
+
+            GameMove move = solution[currentStep];
+
+            bool moved = TryMove(move.From, move.To);
+            if (moved)
+                currentStep++;
+
+            return moved;
         }
 
         private bool IsWithinBounds(Point p)
@@ -70,9 +87,46 @@ namespace Peg_Solitaire_Game
 
         public void ComputeSolution()
         {
-            var solver = new BacktrackingSolver();
+            /*var solver = new BacktrackingSolver();
             solution = solver.Solve(board.Clone());
+            currentStep = 0;*/
+            var solver = new BacktrackingSolver();
+            var rawSolution = solver.Solve(board.Clone());
+
+            if (rawSolution == null)
+            {
+                solution = null;
+                currentStep = 0;
+                return;
+            }
+
+            solution = new List<GameMove>();
+            foreach (var move in rawSolution)
+            {
+                solution.Add(new GameMove(move.from, move.to));
+            }
+
             currentStep = 0;
+        }
+
+        public void LoadReplayMoves(List<GameMove> moves)
+        {
+            replayMoves = moves ?? new List<GameMove>();
+            replayStep = 0;
+        }
+
+        public bool PlayReplayStep()
+        {
+            if (replayMoves == null || replayStep >= replayMoves.Count)
+                return false;
+
+            GameMove move = replayMoves[replayStep];
+
+            bool moved = TryMove(move.From, move.To);
+            if (moved)
+                replayStep++;
+
+            return moved;
         }
     }
 }

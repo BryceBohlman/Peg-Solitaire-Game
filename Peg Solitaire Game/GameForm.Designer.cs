@@ -30,6 +30,9 @@
         {
             boardPanel = new Panel();
             solveButton = new Button();
+            saveReplayButton = new Button();
+            loadReplayButton = new Button();
+            shuffleButton = new Button();
             SuspendLayout();
             // 
             // boardPanel
@@ -50,11 +53,44 @@
             solveButton.UseVisualStyleBackColor = true;
             solveButton.Click += solveButton_Click;
             // 
+            // saveReplayButton
+            // 
+            saveReplayButton.Location = new Point(811, 188);
+            saveReplayButton.Name = "saveReplayButton";
+            saveReplayButton.Size = new Size(112, 34);
+            saveReplayButton.TabIndex = 4;
+            saveReplayButton.Text = "Save Replay";
+            saveReplayButton.UseVisualStyleBackColor = true;
+            saveReplayButton.Click += saveReplayButton_Click;
+            // 
+            // loadReplayButton
+            // 
+            loadReplayButton.Location = new Point(811, 228);
+            loadReplayButton.Name = "loadReplayButton";
+            loadReplayButton.Size = new Size(112, 34);
+            loadReplayButton.TabIndex = 5;
+            loadReplayButton.Text = "Load Replay";
+            loadReplayButton.UseVisualStyleBackColor = true;
+            loadReplayButton.Click += loadReplayButton_Click;
+            // 
+            // shuffleButton
+            // 
+            shuffleButton.Location = new Point(811, 52);
+            shuffleButton.Name = "shuffleButton";
+            shuffleButton.Size = new Size(112, 34);
+            shuffleButton.TabIndex = 6;
+            shuffleButton.Text = "Shuffle";
+            shuffleButton.UseVisualStyleBackColor = true;
+            shuffleButton.Click += shuffleButton_Click;
+            // 
             // GameForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1001, 637);
+            Controls.Add(shuffleButton);
+            Controls.Add(loadReplayButton);
+            Controls.Add(saveReplayButton);
             Controls.Add(solveButton);
             Controls.Add(boardPanel);
             Name = "GameForm";
@@ -66,5 +102,8 @@
 
         private Panel boardPanel;
         private Button solveButton;
+        private Button saveReplayButton;
+        private Button loadReplayButton;
+        private Button shuffleButton;
     }
 }

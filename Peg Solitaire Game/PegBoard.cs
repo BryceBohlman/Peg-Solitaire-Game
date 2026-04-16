@@ -13,7 +13,9 @@ namespace Peg_Solitaire_Game
 
     public class PegBoard
     {
-        public SlotState[,] Board;
+        public SlotState[,] Board { get; set; }
+        public int Size => Board.GetLength(0);
+        public string BoardType { get; private set; } = "";
 
         public PegBoard(int size)
         {
@@ -260,6 +262,89 @@ namespace Peg_Solitaire_Game
             }
 
             return moves;
+        }
+
+        public List<string> ToTextLines()
+        {
+            int rows = Board.GetLength(0);
+            int cols = Board.GetLength(1);
+
+            var lines = new List<string>
+        {
+            $"Size={rows}",
+            $"Type={BoardType}",
+            $"Rows={rows}",
+            $"Cols={cols}"
+        };
+
+            for (int r = 0; r < rows; r++)
+            {
+                var parts = new string[cols];
+
+                for (int c = 0; c < cols; c++)
+                {
+                    parts[c] = Board[r, c].ToString();
+                }
+
+                lines.Add(string.Join(" ", parts));
+            }
+
+            return lines;
+        }
+
+        public static PegBoard FromTextLines(string[] lines)
+        {
+            if (lines == null || lines.Length < 5)
+                throw new InvalidDataException("Save file is incomplete.");
+
+            int size = ParseHeaderInt(lines[0], "Size");
+            string type = ParseHeaderString(lines[1], "Type");
+            int rows = ParseHeaderInt(lines[2], "Rows");
+            int cols = ParseHeaderInt(lines[3], "Cols");
+
+            if (rows != cols || rows != size)
+                throw new InvalidDataException("Only square boards are supported.");
+
+            if (lines.Length < 4 + rows)
+                throw new InvalidDataException("Board rows are missing.");
+
+            var board = new PegBoard(size)
+            {
+                BoardType = type
+            };
+
+            for (int r = 0; r < rows; r++)
+            {
+                string[] parts = lines[4 + r].Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                if (parts.Length != cols)
+                    throw new InvalidDataException($"Row {r} has the wrong number of columns.");
+
+                for (int c = 0; c < cols; c++)
+                {
+                    board.Board[r, c] = Enum.Parse<SlotState>(parts[c], ignoreCase: true);
+                }
+            }
+
+            return board;
+        }
+
+        private static int ParseHeaderInt(string line, string key)
+        {
+            string expected = key + "=";
+            if (!line.StartsWith(expected, StringComparison.OrdinalIgnoreCase))
+                throw new InvalidDataException($"Missing header: {key}");
+
+            return int.Parse(line.Substring(expected.Length));
+        }
+
+        private static string ParseHeaderString(string line, string key)
+        {
+            string expected = key + "=";
+            if (!line.StartsWith(expected, StringComparison.OrdinalIgnoreCase))
+                throw new InvalidDataException($"Missing header: {key}");
+
+            return line.Substring(expected.Length).Trim();
         }
     }
 }

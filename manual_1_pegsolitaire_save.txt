@@ -1,0 +1,11 @@
+Size=7
+Type=
+Rows=7
+Cols=7
+Invalid Invalid Empty Empty Peg Invalid Invalid
+Invalid Invalid Empty Empty Empty Invalid Invalid
+Empty Empty Peg Empty Empty Empty Empty
+Empty Empty Empty Empty Peg Empty Empty
+Peg Empty Peg Empty Empty Empty Empty
+Invalid Invalid Empty Empty Empty Invalid Invalid
+Invalid Invalid Empty Peg Empty Invalid Invalid

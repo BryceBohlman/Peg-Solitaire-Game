@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Peg Solitaire Game")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5950ce170d78ca91978e5c4176931d52e64bb290")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+645faa554d303bfdd18bad60cb482333bc24ba52")]
 [assembly: System.Reflection.AssemblyProductAttribute("Peg Solitaire Game")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Peg Solitaire Game")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

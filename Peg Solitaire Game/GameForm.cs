@@ -48,6 +48,8 @@ namespace Peg_Solitaire_Game
 
         public void GenerateBoard()
         {
+            boardPanel.Controls.Clear();
+
             buttons = new Button[boardSize, boardSize];
 
             int cellSize = 50;
@@ -180,9 +182,9 @@ namespace Peg_Solitaire_Game
         private void ShowEndDialog(string message)
         {
             var result = MessageBox.Show(
-                message + "\nStart a new game?",
-                "Game Over",
-                MessageBoxButtons.YesNo,
+                message + "\n\nYes = Start a new game\nNo = Exit\nCancel = Save game",
+        "Game Over",
+                MessageBoxButtons.YesNoCancel,
                 MessageBoxIcon.Question
             );
 
@@ -190,9 +192,9 @@ namespace Peg_Solitaire_Game
             {
                 RestartGame();
             }
-            else
+            else if (result == DialogResult.Cancel)
             {
-                Application.Exit();
+                SaveGameFromDialog();
             }
         }
 
@@ -207,6 +209,7 @@ namespace Peg_Solitaire_Game
         {
             if (game is AutomatedGame autoGame)
             {
+
                 autoGame.ComputeSolution();
 
                 while (!game.IsGameOver())
@@ -224,6 +227,196 @@ namespace Peg_Solitaire_Game
             }
         }
 
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            using SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            dialog.Title = "Save Peg Solitaire Game";
+            dialog.FileName = "pegsolitaire_save.txt";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    game.SaveToFile(dialog.FileName);
+                    MessageBox.Show("Game saved successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to save game:\n" + ex.Message);
+                }
+            }
+        }
+
+        private async void loadAutoButton_Click(object sender, EventArgs e)
+        {
+            using OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            dialog.Title = "Load Saved Game for Auto Solve";
+
+            if (dialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            try
+            {
+                string[] lines = File.ReadAllLines(dialog.FileName);
+                PegBoard loadedBoard = PegBoard.FromTextLines(lines);
+
+                game = new AutomatedGame(loadedBoard);
+
+                GenerateBoard();
+                UpdateBoard();
+
+                if (game is AutomatedGame autoGame)
+                {
+                    autoGame.ComputeSolution();
+
+                    while (!game.IsGameOver())
+                    {
+                        bool moved = autoGame.PlayStep();
+
+                        if (!moved)
+                            break;
+
+                        UpdateBoard();
+                        await Task.Delay(200);
+                    }
+
+                    CheckGameOver();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to load saved game:\n" + ex.Message);
+            }
+        }
+
+        private void saveReplayButton_Click(object sender, EventArgs e)
+        {
+            using SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            dialog.Title = "Save Replay";
+            dialog.FileName = "pegsolitaire_replay.txt";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string modeName = game is AutomatedGame ? "Automated" : "Manual";
+                    game.SaveReplayToFile(dialog.FileName, modeName);
+                    MessageBox.Show("Replay saved successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to save replay:\n" + ex.Message);
+                }
+            }
+        }
+
+        private async void loadReplayButton_Click(object sender, EventArgs e)
+        {
+            using OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            dialog.Title = "Load Replay";
+
+            if (dialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            try
+            {
+                ReplayData replay = ReplayData.LoadFromFile(dialog.FileName);
+
+                game = new AutomatedGame(replay.Size, replay.Type);
+                GenerateBoard();
+                UpdateBoard();
+
+                if (game is AutomatedGame autoGame)
+                {
+                    autoGame.LoadReplayMoves(replay.Moves);
+
+                    while (autoGame.PlayReplayStep())
+                    {
+                        UpdateBoard();
+                        await Task.Delay(200);
+                    }
+
+                    CheckGameOver();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to load replay:\n" + ex.Message);
+            }
+        }
+
+        private void shuffleButton_Click(object sender, EventArgs e)
+        {
+            if (game == null)
+                return;
+
+            // Optional: reset history before shuffle
+           // game = new ManualGame(game.Board.Size, game.Board.BoardType);
+
+            game.Shuffle(3);  // number of random moves
+
+            UpdateBoard();
+        }
+
+        private void SaveGameFromDialog()
+        {
+            using SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            dialog.Title = "Save Peg Solitaire Game";
+            dialog.FileName = "pegsolitaire_save.txt";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    game.SaveReplayToFile(dialog.FileName, game is AutomatedGame ? "Automated" : "Manual");
+                    MessageBox.Show("Game saved successfully.", "Save Complete",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ShowPostSaveDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to save game:\n" + ex.Message,
+                        "Save Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+
+                    ShowEndDialog("The game is still over.");
+                }
+            }
+            else
+            {
+                ShowEndDialog("The game is still over.");
+            }
+        }
+
+        private void ShowPostSaveDialog()
+        {
+            var result = MessageBox.Show(
+                "What would you like to do next?\n\nYes = Start a new game\nNo = Exit",
+                "Game Saved",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                RestartGame();
+            }
+            else if (result == DialogResult.No)//Do not remove else if block, 
+            {                                  //Despite seeming redundant, program doesn't work correctly otherwise
+                Application.Exit();
+            }
+            else 
+            {
+                Application.Exit();
+            }
+        }
         /*private async void solveButton_Click(object sender, EventArgs e)
         {
             if (game is AutomatedGame autoGame)
